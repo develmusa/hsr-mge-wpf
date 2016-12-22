@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="ch.hsr.wpf.gadgeothek.manager.view.Loan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.manager.view"
+             mc:Ignorable="d" 
+             Height="Auto" Width="Auto">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <!--ToDo: Sort by Date-->
+            <DataGrid ItemsSource="{Binding LoansList}" IsReadOnly="True"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
