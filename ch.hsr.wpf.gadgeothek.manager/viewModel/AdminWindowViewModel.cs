@@ -18,6 +18,7 @@ namespace ch.hsr.wpf.gadgeothek.manager.viewModel
     {
         public GadgetViewModel GadgetViewModel { get; }
         public LoanViewModel LoanViewModel { get; private set; }
+
         public ServiceHandler serviceHandler;        
 
         public AdminWindowViewModel(GadgetViewModel GadgetViewModel, LoanViewModel LoanViewModel, ServiceHandler serviceHandler)

@@ -25,6 +25,7 @@ namespace ch.hsr.wpf.gadgeothek.manager
 
             GadgetViewModel gadgetViewModel = new GadgetViewModel(gadgetModel, serviceHandler);
             LoanViewModel loanViewModel = new LoanViewModel(loanModel, serviceHandler);
+          
             AdminWindowViewModel adminWindowViewModel = new AdminWindowViewModel(gadgetViewModel, loanViewModel, serviceHandler);
             
             AdminWindow mW = new AdminWindow(adminWindowViewModel);
