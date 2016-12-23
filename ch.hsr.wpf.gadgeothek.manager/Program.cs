@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ch.hsr.wpf.gadgeothek.manager
@@ -30,9 +31,18 @@ namespace ch.hsr.wpf.gadgeothek.manager
             
             AdminWindow mW = new AdminWindow(adminWindowViewModel);
 
-            serviceHandler.RefreshAll();
-            gadgetViewModel.Update();
-            loanViewModel.Update();
+            new Thread(delegate ()
+            {
+                while(true)
+                {
+                    serviceHandler.RefreshAll();
+                    System.Threading.Thread.Sleep(10000);
+                    Console.WriteLine("Slept 10sec");
+                }
+            }).Start();
+
+            
+            
             mW.ShowDialog();
            
             

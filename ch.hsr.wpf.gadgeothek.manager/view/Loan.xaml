@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel Orientation="Horizontal">
             <!--ToDo: Sort by Date-->
-            <DataGrid ItemsSource="{Binding LoansList}" IsReadOnly="True"/>
+            <DataGrid ItemsSource="{Binding Path=LoansList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
         </StackPanel>
     </Grid>
 </UserControl>

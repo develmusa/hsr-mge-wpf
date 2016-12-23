@@ -36,6 +36,7 @@ namespace ch.hsr.wpf.gadgeothek.manager.viewModel
             var gadget = new Gadget(Name) { Manufacturer = Manufacturer, Price = Price, InventoryNumber = InventoryNumber };
             serviceHandler.AddGadget(gadget);
             Messenger.Default.Send(new NotificationMessage("Add_Gadget_Ok"));
+            serviceHandler.RefreshAll();
         }
 
         private void Cancel()

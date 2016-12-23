@@ -10,7 +10,7 @@
         <StackPanel Orientation="Horizontal"  >
             <!--<TextBlock Text="{Binding GadgetName}" />-->
 
-            <DataGrid ItemsSource="{Binding GadgetsList}" SelectedItem="{Binding SelectedGadget , Mode=TwoWay}" IsReadOnly="True"/>
+            <DataGrid ItemsSource="{Binding Path=GadgetsList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedGadget , Mode=TwoWay}" IsReadOnly="True"/>
            
         </StackPanel>
     </Grid>
