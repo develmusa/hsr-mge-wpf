@@ -18,14 +18,13 @@ namespace ch.hsr.wpf.gadgeothek.manager.viewModel
     {
         public GadgetViewModel GadgetViewModel { get; }
         public LoanViewModel LoanViewModel { get; private set; }
+        public ServiceHandler ServiceHandler { get; private set; }        
 
-        public ServiceHandler serviceHandler;        
-
-        public AdminWindowViewModel(GadgetViewModel GadgetViewModel, LoanViewModel LoanViewModel, ServiceHandler serviceHandler)
+        public AdminWindowViewModel(GadgetViewModel GadgetViewModel, LoanViewModel LoanViewModel, ServiceHandler ServiceHandler)
         {
             this.GadgetViewModel = GadgetViewModel;
             this.LoanViewModel = LoanViewModel;
-            this.serviceHandler = serviceHandler;
+            this.ServiceHandler = ServiceHandler;
         }
     }
 }

@@ -19,6 +19,7 @@ namespace ch.hsr.wpf.gadgeothek.manager.viewModel
         public List<Gadget> GadgetsList { get; set; }
         public ServiceHandler serviceHandler;
         public ICommand DeleteRequestCommand { get; set; }
+        public ICommand AddRequestCommand { get; set; }
         public Gadget SelectedGadget { get; set; }
         public Gadget MarkedToDeleteGadget { get; set; }
 
@@ -27,6 +28,7 @@ namespace ch.hsr.wpf.gadgeothek.manager.viewModel
             this.GadgetModel = GadgetModel;
             this.serviceHandler = serviceHandler;
             DeleteRequestCommand = new RelayCommand(this.DeleteRequest);
+            AddRequestCommand = new RelayCommand(this.AddRequest);
 
             Messenger.Default.Register<NotificationMessage>(this, (message) =>
             {
@@ -60,6 +62,12 @@ namespace ch.hsr.wpf.gadgeothek.manager.viewModel
         private void DeleteCancel()
         {
             MarkedToDeleteGadget = null;
+        }
+
+        private void AddRequest()
+        {
+            Debug.WriteLine(" GadgetViewModel| AddRequest()");
+            Messenger.Default.Send(new NotificationMessage("Add_Gadget"));
         }
 
         public void Update()

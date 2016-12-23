@@ -1,0 +1,35 @@
+﻿<Window x:Class="ch.hsr.wpf.gadgeothek.manager.view.GadgetAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ch.hsr.wpf.gadgeothek.manager.view"
+        mc:Ignorable="d"
+        Title="Add a new Gadget" Height="240" Width="300">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" Grid.Row="0">InventoryNumber</Label>
+        <Label Grid.Column="0" Grid.Row="2">Price</Label>
+        <Label Grid.Column="0" Grid.Row="3">Manufacturer</Label>
+        <Label Grid.Column="0" Grid.Row="4">Name</Label>
+        <TextBox Text="{Binding InventoryNumber}" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center"  Margin="5"/>
+        <TextBox Text="{Binding Price}" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center"  Margin="5"/>
+        <TextBox Text="{Binding Manufacturer}" Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Center"  Margin="5"/>
+        <TextBox Text="{Binding Name}" Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center"  Margin="5"/>
+        <StackPanel  Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 10 0 0">
+            <Button Command="{Binding Path=AddCommand}" Foreground="#727A8A" Background="#333843" Margin=" 0,0,5,0" Padding="5" BorderThickness="0">Add</Button>
+            <Button Command="{Binding Path=CancelCommand}" Foreground="#727A8A" Background="#333843" Margin=" 0,0,5,0" Padding="5" BorderThickness="0">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

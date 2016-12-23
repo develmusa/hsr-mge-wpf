@@ -14,16 +14,15 @@ namespace ch.hsr.wpf.gadgeothek.manager.viewModel
 {
     public class GadgetDeleteViewModel
     {
-        private view.Gadget gadget;
-
         public ICommand DeleteCommand { get; set; }
         public ICommand CancelCommand { get; set; }
-
+        
         public GadgetDeleteViewModel()
         {
             Debug.WriteLine("GadgetDeleteViewModel| Constructor");
             DeleteCommand = new RelayCommand(this.Delete);
             CancelCommand = new RelayCommand(this.Cancel);
+            
         }
 
         private void Delete()

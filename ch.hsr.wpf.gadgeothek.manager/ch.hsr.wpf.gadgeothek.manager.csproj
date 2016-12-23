@@ -87,6 +87,7 @@
     <Compile Include="model\LoanModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="viewModel\AdminWindowViewModel.cs" />
+    <Compile Include="viewModel\GadgetAddViewModel.cs" />
     <Compile Include="viewModel\GadgetDeleteViewModel.cs" />
     <Compile Include="viewModel\GadgetViewModel.cs" />
     <Compile Include="viewModel\LoanViewModel.cs" />
@@ -95,6 +96,9 @@
     </Compile>
     <Compile Include="view\Gadget.xaml.cs">
       <DependentUpon>Gadget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="view\GadgetAdd.xaml.cs">
+      <DependentUpon>GadgetAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="view\GadgetDelete.xaml.cs">
       <DependentUpon>GadgetDelete.xaml</DependentUpon>
@@ -144,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="view\Gadget.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="view\GadgetAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

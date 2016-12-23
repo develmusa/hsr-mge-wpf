@@ -23,6 +23,7 @@ namespace ch.hsr.wpf.gadgeothek.manager.view
     public partial class AdminWindow : Window
     {
         GadgetDelete GadgetDelete { get; set; }
+        GadgetAdd GadgetAdd { get; set; }
 
         public AdminWindow(AdminWindowViewModel AdminWindowViewModel)
         {
@@ -45,6 +46,20 @@ namespace ch.hsr.wpf.gadgeothek.manager.view
 
                     case "Delete_Gadget_Ok":
                         GadgetDelete.Close();
+                        break;
+
+                    case "Add_Gadget":
+                        GadgetAdd = new GadgetAdd();
+                        GadgetAdd.DataContext = new GadgetAddViewModel();
+                        GadgetAdd.Show();
+                        break;
+
+                    case "Add_Gadget_Cancel":
+                        GadgetAdd.Close();
+                        break;
+
+                    case "Add_Gadget_Ok":
+                        GadgetAdd.Close();
                         break;
                 }
             }); 

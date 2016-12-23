@@ -12,6 +12,8 @@ namespace ch.hsr.wpf.gadgeothek.manager
 {
     public class ServiceHandler
     {
+        public static ServiceHandler Instance { get; set; }
+
         private GadgetModel GadgetModel;
         private LoanModel LoanModel;
         private LibraryAdminService libraryAdminService;
@@ -24,6 +26,7 @@ namespace ch.hsr.wpf.gadgeothek.manager
             LoanModel = loanModel;
             ServerUrl = serverUrl;
             libraryAdminService = new LibraryAdminService(ServerUrl);
+            Instance = this;
         }
 
         public void RefreshAll()
@@ -53,6 +56,16 @@ namespace ch.hsr.wpf.gadgeothek.manager
                 Debug.WriteLine("ServiceHandler| Gadget Deleted");            
             else
                 Debug.WriteLine("ServiceHandler| Deletion Failed");            
+        }
+
+        public void AddGadget(Gadget gadget)
+        {
+            
+            if (libraryAdminService.AddGadget(gadget))
+                Debug.WriteLine("ServiceHandler| Gadget Added");
+            else
+                Debug.WriteLine("ServiceHandler| Adding Failed");
+
         }
     }
 }
