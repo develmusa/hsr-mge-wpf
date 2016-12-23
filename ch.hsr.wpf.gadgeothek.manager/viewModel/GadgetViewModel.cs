@@ -47,9 +47,12 @@ namespace ch.hsr.wpf.gadgeothek.manager.viewModel
 
         private void DeleteRequest()
         {
-            Debug.WriteLine("Delete:    " + SelectedGadget + "    Type:   " + SelectedGadget.GetType());
-            MarkedToDeleteGadget = SelectedGadget;
-            Messenger.Default.Send(new NotificationMessage("Delete_Gadget"));
+            if (SelectedGadget != null) {
+                Debug.WriteLine("Delete:    " + SelectedGadget + "    Type:   " + SelectedGadget.GetType());
+                MarkedToDeleteGadget = SelectedGadget;
+                Messenger.Default.Send(new NotificationMessage("Delete_Gadget"));
+            }
+
         }
 
         private void DeleteGadget()
